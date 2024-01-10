@@ -2,6 +2,7 @@ import { Marked } from 'marked'
 import React, { useState } from 'react'
 import Markdown from 'react-markdown'
 import { FaExpandArrowsAlt } from "react-icons/fa";
+import { BiCollapse } from "react-icons/bi";
 
 function MarkComponent() {
     const [value, setValue] = useState(null)
@@ -13,7 +14,7 @@ function MarkComponent() {
         <div className='header-container' >
           <span className='header-text' >Editor</span>
           <span onClick={()=>setPreview(prev=> !prev)} >
-          <FaExpandArrowsAlt/>
+          {preview ?<BiCollapse/> :<FaExpandArrowsAlt/>}
           </span>
         </div>
         <textarea id='editor' className={preview ?'toggle-height':''} onChange={(e)=>setValue(e.target.value)}>
@@ -23,7 +24,7 @@ function MarkComponent() {
       <div className='header-container' >
           <span className='header-text' >Editor</span>
           <span onClick={()=>setEditor(prev=>!prev)}>
-            <FaExpandArrowsAlt/>
+            {editor ? <BiCollapse/>:<FaExpandArrowsAlt/>}
             </span>
         </div>
         <div id='preview'>
