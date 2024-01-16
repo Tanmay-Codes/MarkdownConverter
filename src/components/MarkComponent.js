@@ -22,7 +22,7 @@ function MarkComponent() {
       </div>
       <div className={preview ?'toggle-preview' :'preview-container shadow'} >
       <div className='header-container' >
-          <span className='header-text' >Editor</span>
+          <span className='header-text' >Preview</span>
           <span onClick={()=>setEditor(prev=>!prev)}>
             {editor ? <BiCollapse/>:<FaExpandArrowsAlt/>}
             </span>
